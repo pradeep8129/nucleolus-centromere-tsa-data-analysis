@@ -53,7 +53,7 @@ hct.chip <-read_tsv("HCT116_chip_anno_25kb_adjusted_no_na.txt")   # HCT116 ChIP 
 
 ############### Importing Specific bed file for example LAD subset 1 #####
 
-fig_5a_bed_file <- import("LAD Subset1.bedfig_5a_new_bed")   # Bed file
+fig_5a_bed_file <- import("LAD_Subset1_fig_5a.bed")   # Bed file
 high_mki_h1_low_mki_hct116 <- granges(fig_5a_bed_file)
 
 ######## Making granges from tsv files of ChIP seq for H1 and HCT116 #####
@@ -94,12 +94,12 @@ h1_chip_high_mki_k562_low_mki_hct116 <- h1.chip.gr[unique(queryHits(findOverlaps
 #### exporting csv files #### 
 
 write.table( x = data.frame(hct_chip_high_mki_h1_low_mki_hct116), file = "overlap_hct_chip_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
-write.table( x = data.frame(h1_chip_high_mki_k562_low_mki_hct116), file = "overlap_hff_chip_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
+write.table( x = data.frame(h1_chip_high_mki_k562_low_mki_hct116), file = "overlap_h1_chip_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
 
 ##### Finding overlaps between Repli-Seq and specific bed regions for example Subset 1 ######
 
 hct_repli <- import("HCT116.smooth.bw")     # HCT repli seq
-h1_repli <- import("HFF.smooth.bw")         # H1 repli seq
+h1_repli <- import("H1.smooth.bw")         # H1 repli seq
 
 hct_repli_high_mki_h1_low_mki_hct116 <- hct_repli[unique(queryHits(findOverlaps(hct_repli,high_mki_h1_low_mki_hct116)))]
 h1_repli_high_mki_h1_low_mki_hct116 <- h1_repli[unique(queryHits(findOverlaps(h1_repli,high_mki_h1_low_mki_hct116)))]
@@ -107,7 +107,7 @@ h1_repli_high_mki_h1_low_mki_hct116 <- h1_repli[unique(queryHits(findOverlaps(h1
 #### exporting csv files #### 
 
 write.table( x = data.frame(hct_repli_high_mki_h1_low_mki_hct116 ), file = "overlap_subset__hct_repli_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
-write.table( x = data.frame(h1_repli_high_mki_h1_low_mki_hct116 ), file = "overlap_subset_hff_repli_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
+write.table( x = data.frame(h1_repli_high_mki_h1_low_mki_hct116 ), file = "overlap_subset_h1_repli_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
 
 ####### Calculating the histone marks for LADs and iLADS in HCT116 and H1 #######
 hct_lads_histone_high_mki_h1_low_mki_hct116 <- hct.chip.gr[unique(queryHits(findOverlaps(hct.chip.gr,hct_lad)))]
@@ -128,15 +128,15 @@ h1_interlads_repli_high_mki_h1_low_mki_hct116 <- h1_repli[unique(queryHits(findO
 write.table( x = data.frame(hct_lads_histone_high_mki_h1_low_mki_hct116), file = "overlap_hct_lads_histone_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
 write.table( x = data.frame(hct_interlads_histone_high_mki_h1_low_mki_hct116), file = "overlap_hct_interlads_histone_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
 
-write.table( x = data.frame(h1_lads_histone_high_mki_h1_low_mki_hct116), file = "overlap_hff_lads_histone_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
-write.table( x = data.frame(h1_interlads_histone_high_mki_h1_low_mki_hct116), file = "overlap_hff_interlads_histone_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
+write.table( x = data.frame(h1_lads_histone_high_mki_h1_low_mki_hct116), file = "overlap_h1_lads_histone_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
+write.table( x = data.frame(h1_interlads_histone_high_mki_h1_low_mki_hct116), file = "overlap_h1_interlads_histone_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
 
 
 write.table( x = data.frame(hct_lads_repli_high_mki_h1_low_mki_hct116), file = "overlap_hct_lads_repli_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
 write.table( x = data.frame(hct_interlads_repli_high_mki_h1_low_mki_hct116), file = "overlap_hct_interlads_repli_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
 
-write.table( x = data.frame(h1_lads_repli_high_mki_h1_low_mki_hct116), file = "overlap_hff_lads_repli_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
-write.table( x = data.frame(h1_interlads_repli_high_mki_h1_low_mki_hct116), file = "overlap_hff_interlads_repli_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
+write.table( x = data.frame(h1_lads_repli_high_mki_h1_low_mki_hct116), file = "overlap_h1_lads_repli_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
+write.table( x = data.frame(h1_interlads_repli_high_mki_h1_low_mki_hct116), file = "overlap_h1_interlads_repli_high_mki_h1_low_mki_hct116.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
 
 ############### Importing RNA Seq data for HCT116 and H1  #####
 h1.chip_rna_Seq<-read_excel("h1_expression.xlsx")
@@ -175,7 +175,7 @@ hct_fig5a_rna_seq <-hct.chip_rna_Seq_gr[unique(queryHits(findOverlaps(hct.chip_r
 #### exporting csv files ####
 
 write.table( x = data.frame(hct_fig5a_rna_seq), file = "subset_hct_expression.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
-write.table( x = data.frame(h1_fig5a_rna_seq), file = "subset_hff_expression.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
+write.table( x = data.frame(h1_fig5a_rna_seq), file = "subset_h1_expression.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
 
 ####### now calculating the histone marks for lads #######
 hct_lads_fig5<- hct.chip_rna_Seq_gr[unique(queryHits(findOverlaps(hct.chip_rna_Seq_gr,hct_lad)))]
@@ -189,8 +189,8 @@ h1_interlads_fig5 <- h1.chip_rna_Seq_gr[unique(queryHits(findOverlaps(h1.chip_rn
 write.table( x = data.frame(hct_lads_fig5), file = "overlap_hct_lads_fig5_rna_seq.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
 write.table( x = data.frame(hct_interlads_fig5), file = "overlap_hct_interlads_fig5_rna_seq.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
 
-write.table( x = data.frame(h1_lads_fig5), file = "overlap_hff_lads_fig5_rna_seq.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
-write.table( x = data.frame(h1_interlads_fig5), file = "overlap_hff_interlads_fig5_rna_seq.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
+write.table( x = data.frame(h1_lads_fig5), file = "overlap_h1_lads_fig5_rna_seq.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
+write.table( x = data.frame(h1_interlads_fig5), file = "overlap_h1_interlads_fig5_rna_seq.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=FALSE )
 
 
 

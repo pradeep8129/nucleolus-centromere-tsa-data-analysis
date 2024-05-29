@@ -5,7 +5,7 @@
 This folder has four sub folders:
 
 Folder 1: histone_mark_overlap <br />
-The R code in this folder was used for calculating overlap of histone marks, repli-seq and RNA-seq with different BED file for example LAD subset 1. This code is written for one cell line but this code was edited to change cell line name and BED file for analysis. The output of this code can be processed in matlab or R to create bar graphs. This code was used for analysis shown in Fig. 5, 6, S5 and S7.  
+The R code in this folder was used for calculating overlap of histone marks, repli-seq and RNA-seq with different BED file for example LAD subset 1. This code is written for one cell line but this code was edited to change cell line name and BED file for analysis. LAD calls, processed ChIP-seq, processed 2-fraction Repli-seq and expression data H1 and HCT116 is provided here. The output of this code can be processed in matlab or R to create bar graphs. This code was used for analysis shown in Fig. 5, 6, S5 and S7.  
 
 Folder 2: Mean_fish_distance_calculation <br />
 This Matlab code was used to calculate the mean distance of FISH probes from Su, J.H., et al., "Genome-Scale Imaging of the 3D Organization and Transcriptional Activity of Chromatin". Cell, 2020. 182(6): p. 1641-1659 e26.
