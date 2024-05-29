@@ -1,6 +1,6 @@
 # nucleolus-centromere-tsa-data-analysis
 
-This is the code used to analyze the data presented in Pradeep Kumar et al., 2023, titled "Nucleolus and centromere TSA-Seq reveals variable localization of heterochromatin in different cell types". Here is the link to the preprint: https://doi.org/10.1101/2023.10.29.564613
+## This is the code used to analyze the data presented in Pradeep Kumar et al., 2023, titled "Nucleolus and centromere TSA-Seq reveals variable localization of heterochromatin in different cell types". Here is the link to the preprint: https://doi.org/10.1101/2023.10.29.564613
 
 This folder has three sub folders:
 
@@ -9,7 +9,6 @@ The R code in this folder was used for calculating overlap of histone marks, rep
 
 Folder 2: Mean_fish_distance_calculation
 This Matlab code was used to calculate the mean distance of FISH probes from Su, J.H., et al., "Genome-Scale Imaging of the 3D Organization and Transcriptional Activity of Chromatin". Cell, 2020. 182(6): p. 1641-1659 e26.
-
 The modified excel sheet from the FISH data is provided here. The mean data from this FISH analysis was used in Fig 3e, 3h, 3k and Fig 7g 
 
 Folder 3: Type1_2_peaks_vs_TSA_Seq
