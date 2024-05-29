@@ -13,4 +13,6 @@ This Matlab code was used to calculate the mean distance of FISH probes from Su,
 The modified excel sheet from the FISH data is provided here. The mean data from this FISH analysis was used in Fig 3e, 3h, 3k and Fig 7g 
 
 Folder 3: Type1_2_peaks_vs_TSA_Seq
+This R code was used to overlap Type 1 and Type 2 peaks with TSA-seq data. This code was used in Fig 7b and 8b.
+
 
